@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Counter</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Counter</h1>
+            <p>{{session['counter']}} time(s)</p>
+        <div class="buttons">
+            <button type="submit"><a href="/add">Click</a></button>
+            <button type="submit"><a href="/add2">Add 2 Visits</a></button>
+            <!-- NINJA BONUS: Add a Reset button to reset the counter -->
+            <button type="submit"><a href="/destroy_session">Reset</a></button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    align-items: flex-start;
+    height: 700px;
+    width: 700px;
+    background-color: rgb(48, 47, 47) ;
+    color: white;
+}
+
+h1 {
+    color: gold;
+}
+
+#post_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 600px;
+    width: 600px;
+    color: white;
+    font-size: 15pt;
+}
+
+.labels {
+    color: gold;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: gold;
+    padding: 10px;
+    width: 100px;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+}

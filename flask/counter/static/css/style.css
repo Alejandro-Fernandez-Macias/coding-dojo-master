@@ -1,0 +1,38 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: larger;
+}
+
+#container {
+    width: 1000px;
+    height: 1000px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    padding: 20px;
+}
+
+button {
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 5px 5px black;
+    border-color: black;
+    background-color: gold;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    padding: 25px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dojo Survey With Validations</title>
+</head>
+<body>
+    <div class="container col-md-4" style="background-color: silver">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/process" method="post" class="col-md-12">
+            <h2>Dojo Survey</h2>
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" class="form-control">
+                <label for="location">Dojo Location:</label>
+                <input type="text" name="location" class="form-control">
+                <label for="language">Favorite Language:</label>
+                <input type="text" name="language" class="form-control">
+                <label for="comment">Comment (Optional):</label>
+                <textarea class="form-control" name="comment" col="5" rows="3"></textarea>
+                <button class="btn-primary col-md-auto mt-3 mb-3" type="submit" name="Submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Books</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left_form">
+            <h1>New Books</h1>
+            <form action="/create/book" method="post">
+                <label for="title">Title: </label>
+                <input type="text" name="title">
+                <label for="num_of_pages">Number of Pages:</label>
+                <input type="text" name="num_of_pages">
+                <br>
+                <button type="submit" class="btn btn-primary">Add Book</button>
+                <br>
+            </form>
+
+        </div>
+        <div class="right_card">
+            <h1>All Books</h1>
+            {% for b in all_books %}
+                <a class="links" href="/book/{{b.id}}">{{b.title}}</a>
+            {% endfor %}
+            <br>
+            <a class="btn btn-primary" href="/" role="button">Home</a>
+            <br>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+* {
+    margin: 0 auto;
+    padding: 0  auto;
+}
+
+.container {
+    display: flex;
+}
+.dojo_page {
+    height: auto;
+    width: auto;
+    background-color: rgb(59, 61, 63);
+    color:  whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.left_form, .right_card {
+    height: auto;
+    width: 300px;
+    background-color: rgb(59, 61, 63);
+    color:  whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+table {
+    width: auto;
+}
+th, td {
+    color: whitesmoke;
+
+}
+
+#ninja_form {
+    height: auto;
+    width: 300px;
+    background-color: rgb(59, 61, 63);
+    color:  whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: rgb(28, 126, 255);
+}
+
+.links {
+    color: gold;
+}
