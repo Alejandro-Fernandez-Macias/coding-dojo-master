@@ -1,5 +1,5 @@
-# Coding Dojo Python Stack
-This repository was made to show what assignments and peojects I worked on when I attended CODING DOJO's Full Stack Software Development bootcamp.
+# Python Stack
+This repository was made to show what assignments and projects I worked on when I attended CODING DOJO's Full Stack Software Development bootcamp.
 
 Specifically to show what I worked on the Python Stack:
 
