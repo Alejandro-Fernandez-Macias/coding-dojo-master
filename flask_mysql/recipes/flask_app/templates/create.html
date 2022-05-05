@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <title>Create a Recipe</title>
+</head>
+<body>
+    <h1 class="container col-md-10">Welcome {{user.first_name}}!!</h1>
+    <div class="container col-md-12 d-inline-flex">
+        <div class="container col-md-10 d-inline-flex" style="background-color: silver">
+            <form action="/recipe/new" method="post" class="col-md-6">
+            {% with messages = get_flashed_messages(category_filter=['recipe']) %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                    {% for message in messages %}            <!-- loop through the messages -->
+                <p style="background-color: red; font-weight: bolder;">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="container col-md-10 mt-3 d-inline-flex justify-content-between">
+                <h2>Add New Recipe</h2>
+                <div class=" d-inline-flex mb-2 col-md-4 mb-5 mt-2">
+                    <a  class="btn btn-primary mx-5" href="/dashboard" role="button">Dashboard</a>
+                    <a class="btn btn-primary" href="/logout" role="button">Logout</a>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" class="form-control">
+                    <label for="description">Description:</label>
+                    <textarea type="text" name="description" class="form-control" cols="30" rows="10"></textarea>
+                    <label for="instructions">Instructions:</label>
+                    <textarea type="text" name="instructions" class="form-control" cols="30" rows="10"></textarea>
+                        <div class="form-group">
+                            <label class="control-label" for="date_made">Date Made On:</label>
+                            <input class="form-control" id="date" name="date_made" placeholder="MM/DD/YYYY" type="date"/>
+                        </div>
+                        <div class="">
+                            <p>Ready im Under 30 Minutes ?:
+                                <label for="1">Yes</label>
+                                <input type="radio" name="under30" value="1">
+                                <label for="0">No</label>
+                                <input type="radio" name="under30" value="0">
+                            </p>
+                        </div>
+                    <button class="btn btn-primary col-md-auto mt-3 mb-3" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

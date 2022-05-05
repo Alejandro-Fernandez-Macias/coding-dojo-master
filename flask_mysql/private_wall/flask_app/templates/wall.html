@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Hello {{user.first_name}}!</title>
+</head>
+
+<body>
+    <div class="container col-md-7" style="font-weight: bolder; background-color: silver; color: rgb(0, 102, 255) ;">
+        <div class="container col-md-16 mb-5 d-inline-flex d-flex justify-content-between"
+            style="color: rgb(0, 102, 255);">
+            <h1 class="">Coding Dojo Wall</h1>
+            <h2 class="">Welcome {{user.first_name}} !!</h2>
+
+            <a class="btn btn-primary" href="/logout" role="button">Logout</a>
+        </div>
+        <div class=" col md-20 mb-5 d-inline-flex justify-content-between">
+            <div class="col md-5" style="color:white; background-color: rgb(55, 56, 58);">
+            <h3 style="color: rgb(0, 102, 255);">{{messages|length}} Message(s) For You:</h3>
+            {% for message in messages %}
+                    <p>{{message.sender}} said {{message.time_span()}}:</p>
+                    <p>"{{message.content}}"</p>
+                    <a class="btn btn-primary mb-5" href="/delete/message/{{message.id}}" role="button">Delete</a>
+            {% endfor %}
+            </div>
+            <div class="col-md-6" style="background-color: rgb(55, 56, 58);">
+                <h3>Send a Message:</h3>
+                {% for user in users %}
+                {% if user.id != session.user_id %}
+                <form action="/create_message" method="post">
+                    <div class="form-group">
+                        <input type="hidden" name="sender_id" value="{{session.user_id}}">
+                        <input type="hidden" name="receiver_id" value="{{user.id}}">
+                        <label for="receiver_id" style="color: white;">Message {{user.first_name}} :</label>
+                        <textarea class="form-control" name="content" id="" cols="30" rows="5"></textarea>
+                        <button class="btn-primary mt-2" type="submit">Send</button>
+                    </div>
+                </form>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

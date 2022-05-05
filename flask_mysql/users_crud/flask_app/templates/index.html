@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Users CR</title>
+</head>
+
+<body style="margin: 0 auto; padding: auto; height: 1000px; width: 1000px; font-size: larger;">
+    <h1>All  Users</h1>
+    <table class="table table-striped table-inverse table-responsive">
+        <thead class="thead-inverse">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td scope="'row">{{user.id}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}}</td>
+                    <td><a class="btn btn-primary" href="/show/{{user.id}}/user" role="button">Show </a> | <a class="btn btn-primary" href="edit/{{user.id}}/user" role="button">Edit </a> | <a class="btn btn-primary" href="/delete/{{user.id}}/user" role="button" style="background-color: red; border-color: red;"> Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<a  class="btn btn-primary" href="/add_user" role="button">Add New User</a>
+</body>
+</html>
